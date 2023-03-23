@@ -48,7 +48,7 @@ const App = () => {
         <div className="users-section">
           {users.map((user) => (
             <li>
-              <section className="id-section"></section>
+              <section className="id-section">{user.id}</section>
               <section className="name-email-section">
                 <p className="name">Name: {user.name}</p>
                 <p className="email">Email: {user.email}</p>
