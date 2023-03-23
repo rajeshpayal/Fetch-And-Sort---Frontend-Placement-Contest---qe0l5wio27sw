@@ -44,7 +44,7 @@ const App = () => {
           : "Sort by name length (descending)"}
       </button>
       {isLoading && <p>Loading...</p>}
-      {!isLoading && (
+    
         <div className="users-section">
           {users.map((user) => (
             <li>
@@ -56,7 +56,7 @@ const App = () => {
             </li>
           ))}
         </div>
-      )}
+      
     </div>
   );
 };
