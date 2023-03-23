@@ -11,7 +11,10 @@ const App = () => {
     const data = await fetch(
       "https://content.newtonschool.co/v1/pr/main/users"
     );
-    data.json().then((dt) => setUsers([...dt]));
+    data.json().then((dt) => {
+      console.log(dt);
+      setUsers([...dt]);
+    });
     setIsLoading(false);
   };
 
@@ -44,19 +47,18 @@ const App = () => {
           : "Sort by name length (descending)"}
       </button>
       {isLoading && <p>Loading...</p>}
-    
-        <div className="users-section">
-          {users.map((user) => (
-            <li>
-              <section className="id-section">{user.id}</section>
-              <section className="name-email-section">
-                <p className="name">Name: {user.name}</p>
-                <p className="email">Email: {user.email}</p>
-              </section>
-            </li>
-          ))}
-        </div>
-      
+
+      <div className="users-section">
+        {users.map((user) => (
+          <li>
+            <section className="id-section">{user.id}</section>
+            <section className="name-email-section">
+              <p className="name">Name: {user.name} </p>
+              <p className="email">Email: {user.email}</p>
+            </section>
+          </li>
+        ))}
+      </div>
     </div>
   );
 };
